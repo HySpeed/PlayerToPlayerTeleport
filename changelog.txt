@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.0
+Version: 1.0.4
+ - disabled 'dev mode'
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
   Features:
     - Initial Release
     - Player to Player Teleporting
     - Runtime setting to enable Teleporting
     - Runtime setting to enable Teleporting to offline players
+---------------------------------------------------------------------------------------------------
