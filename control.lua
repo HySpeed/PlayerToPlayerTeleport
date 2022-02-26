@@ -35,7 +35,7 @@ end -- PlayerCreated
 
 function PlayerJoined( event )
 -- NOTE: ONLY ENABLE DURING DEVELOPMENT
-    EnableDevConfiguration()
+--  EnableDevConfiguration()
 -- ^^ development only
 
   SetupPlayer( event.player_index )
@@ -54,7 +54,11 @@ end -- RuntimeSettingChanged
 function SetupPlayer( player_index )
   if not global.ptpt then
     global.ptpt = {}
-    global.ptpt.surface = game.surfaces[SURFACE_NAME]
+  end
+
+  local player = game.players[player_index]
+  if not global.ptpt.surface and player ~= nil then
+    global.ptpt.surface = player.surface
   end
 
   if not global.ptpt[player_index] then
