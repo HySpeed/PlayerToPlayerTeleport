@@ -4,7 +4,7 @@ local mod_gui = require("mod-gui")
 
 --==============================================================================
 
-function SetupPlayerUI(player_index)
+function SetupPlayerUI( player_index )
   local player = game.players[player_index]
 
   --remove any old ui frame component
@@ -26,6 +26,8 @@ function SetupPlayerUI(player_index)
   }
 end -- SetupPlayerUI
 
+-------------------------------------------------------------------------------
+
 function OpenUI(player_index)
   local player = game.players[player_index]
   local gui = player.gui.left
@@ -36,6 +38,7 @@ function OpenUI(player_index)
       direction = "vertical",
       caption = {"gui.ptpt_text_title_destinations"}
   }
+  
   -- add drop down
   local player_names = BuildPlayerNameList()
   destinations_frame.add({
