@@ -34,10 +34,6 @@ end -- PlayerCreated
 --------------------------------------------------------------------------------
 
 function PlayerJoined( event )
--- NOTE: ONLY ENABLE DURING DEVELOPMENT
---  EnableDevConfiguration()
--- ^^ development only
-
   SetupPlayer( event.player_index )
 end -- PlayerJoined
 
@@ -55,19 +51,14 @@ function SetupPlayer( player_index )
   if not global.ptpt then
     global.ptpt = {}
   end
-
   local player = game.players[player_index]
-  if not global.ptpt.surface and player ~= nil then
-    global.ptpt.surface = player.surface
-  end
-
   if not global.ptpt[player_index] then
     global.ptpt[player_index] = {
       show_teleport = false
     }
   end
-
   SetupPlayerUI( player_index )
+  return player
 end -- SetupPlayer
 
 --------------------------------------------------------------------------------
@@ -83,6 +74,7 @@ function ProcessGuiEvent( event )
     end
   elseif global.ptpt and event.element.name == "ptpt_teleport_button" then
     TeleportToPlayer( player_index, event.element.parent )
+    CloseUI(player_index)
   end
 end -- ProcessGuiEvent
 
