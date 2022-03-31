@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+  Changes:
+    - Added option to prevent teleporting away when biters are near (default is allow)
+    - Added option to prevent teleporting to a player when biters are near target player (default is allow)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
   Changes:
     - Fixed label typo
