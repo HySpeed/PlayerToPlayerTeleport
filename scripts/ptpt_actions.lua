@@ -60,7 +60,7 @@ function CheckTpAwayAllowed( player )
 -- if 'tp away' limiting is enabled and there are biters near the teleporting player, deny the teleport
   local allowed = true
 
-  if settings.global["ptpt_allow_tp_away_from_biters"].value == true then
+  if settings.global["ptpt_allow_tp_away_from_biters"].value == false then
     local check_range = settings.global["ptpt_distance_tp_away"].value
     local enemies = {}
     enemies = player.surface.find_entities_filtered( {position = player.position, radius = check_range, force = "enemy"} )
@@ -78,7 +78,7 @@ function CheckTpToAllowed( target_player )
 -- if 'tp to' limiting is enabled and there are biters near the target player, deny the teleport
   local allowed = true
 
-  if settings.global["ptpt_allow_tp_to_nearby_biters"].value == true then
+  if settings.global["ptpt_allow_tp_to_nearby_biters"].value == false then
     local check_range = settings.global["ptpt_distance_tp_to"].value
     local  enemies = {}
     enemies = target_player.surface.find_entities_filtered( {position = target_player.position, radius = check_range, force = "enemy"} )
